@@ -12,7 +12,6 @@ import (
 func main() {
 
 	sli := make([]int, 3)
-	fmt.Println(sli)
 
 	// Declare user input variable and exit check variable
 	var myString, exitCheck string
@@ -38,7 +37,7 @@ func main() {
 
 			// Add Int to slice if no error is encountered
 			if err == nil {
-				fmt.Println(myInt)
+				// fmt.Println(myInt)
 				sli = append(sli, myInt)
 
 				// Sort the slice
