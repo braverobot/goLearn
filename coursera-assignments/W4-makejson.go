@@ -18,20 +18,20 @@ func main() {
 	// Prompt the user for their name and add it to variable string 'name'
 	fmt.Printf("Please enter a first name: ")
 	reader := bufio.NewReader(os.Stdin)
-	name, _ := reader.ReadString('\n')
+	usrname, _ := reader.ReadString('\n')
 
 	// Prompt the user for their address and add it to variable string 'address'
 	fmt.Printf("Please enter an address: ")
-	address, _ := reader.ReadString('\n')
+	usraddress, _ := reader.ReadString('\n')
 
 	// Strip the newline character from the variables before adding them to the map
-	name = strings.TrimSuffix(name, "\n")
-	address = strings.TrimSuffix(address, "\n")
+	usrname = strings.TrimSuffix(usrname, "\n")
+	usraddress = strings.TrimSuffix(usraddress, "\n")
 
 	// Create a map (unordered collection of key / value pairs with unique keys)
 	// and assign key name and value address to the map
 	var myMap map[string]string
-	myMap = map[string]string{name: address}
+	myMap = map[string]string{"name": usrname, "address": usraddress}
 
 	// Create JSON out of the map by Marshalling it and then printing it as a string
 	jsonData, _ := json.Marshal(myMap)
